@@ -146,7 +146,8 @@ td b{color:var(--fg);font-weight:600}
 .wave ul.cl li{font-size:15px;margin-bottom:8px}
 .gate{margin-top:16px;padding:13px 16px;border:1px dashed var(--line);border-radius:8px;
   font-size:14.5px;color:var(--mut)}
-.gate b{color:var(--ok);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:11px;
+.gate b{color:var(--fg);font-weight:600}
+.gate>b:first-child{color:var(--ok);letter-spacing:.08em;text-transform:uppercase;font-size:11px;
   display:block;margin-bottom:5px}
 .nope{margin-top:12px;font-size:14.5px;color:var(--mut-2)}
 .nope b{color:var(--acc-lt);font-weight:600}
@@ -277,9 +278,10 @@ footer b{color:var(--fg-2);font-weight:500}
     <div class="card"><span class="tag">Autoridade</span><h5>O rosto do Bruno</h5>
       <p>Reputação construída, histórico de grandes lançamentos com experts relevantes e acesso a um
       círculo de pessoas que o mercado não alcança por anúncio. É o ativo mais caro da mesa.</p></div>
-    <div class="card"><span class="tag">Distribuição</span><h5>Triple A Society</h5>
-      <p>Uma comunidade já formada. É o único canal de distribuição próprio que o Hub tem hoje e a
-      diferença entre lançar para o mercado ou lançar para uma audiência.</p></div>
+    <div class="card"><span class="tag">Rede</span><h5>Triple A Society</h5>
+      <p>O mastermind do Bruno: operadores de ramos distintos do digital, reunidos na mesma sala.
+      Não é audiência de massa — é <b>deal flow</b>. É de onde saem experts para JV, casos reais
+      para calibrar o método e as primeiras vendas de alto ticket.</p></div>
     <div class="card"><span class="tag">Narrativa</span><h5>Atitude · Ação · Abundância</h5>
       <p>Uma filosofia já publicada e já associada ao Bruno. Não precisa ser inventada — precisa ser
       operacionalizada.</p></div>
@@ -301,8 +303,10 @@ footer b{color:var(--fg-2);font-weight:500}
       sabe fazer lançamento — mas nunca lançou a si mesmo.</li>
       <li><strong>Receita perpétua.</strong> Hoje a receita é evento: entra em picos e depende de
       alguém dizer sim. Não há nada rodando enquanto os três dormem.</li>
-      <li><strong>Base própria sob controle.</strong> A audiência mora nas plataformas e nos experts.
-      Quando o lançamento acaba, a lista fica com quem?</li>
+      <li><strong>Base própria — nenhuma.</strong> A Society é rede, não lista: um mastermind de
+      operadores não é público de venda em volume. Fora dela, a audiência mora nas plataformas e
+      nos experts. Hoje o Hub não tem para quem enviar um e-mail no dia em que quiser vender algo
+      próprio.</li>
       <li><strong>Autoridade distribuída.</strong> Um de três sócios tem rosto público. Os outros dois
       são invisíveis para o mercado — inclusive para os experts que deveriam querer contratá-los.</li>
       <li><strong>Comunicação alinhada.</strong> O site vende serviço de agência para empresa que
@@ -312,10 +316,11 @@ footer b{color:var(--fg-2);font-weight:500}
 
   <h4>Os três riscos estruturais</h4>
   <div class="grid g3">
-    <div class="card acc"><span class="tag">Risco 01</span><h5>Concentração de autoridade</h5>
-      <p>Se toda venda passa pelo rosto do Bruno, o Hub não é uma empresa: é uma agenda. O teto de
-      escala vira o teto de horas dele, o risco de saída vira risco de extinção, e o valor da empresa
-      sem ele tende a zero.</p></div>
+    <div class="card acc"><span class="tag">Risco 01</span><h5>Concentração de autoridade e rede</h5>
+      <p>Não é só o rosto que é dele — a rede também. Se toda venda passa pelo Bruno e toda
+      originação passa pela Society, o Hub não é uma empresa: é uma agenda. O teto de escala vira o
+      teto de horas dele, o risco de saída vira risco de extinção, e o valor da empresa sem ele
+      tende a zero.</p></div>
     <div class="card acc"><span class="tag">Risco 02</span><h5>Quatro frentes simultâneas</h5>
       <p>Lançamento, perpétuo, evento e mentoria têm ciclos de caixa, times e cadências incompatíveis.
       Rodar as quatro no mesmo trimestre com três sócios entrega quatro operações medianas — e
@@ -362,8 +367,9 @@ footer b{color:var(--fg-2);font-weight:500}
   <div class="grid g2">
     <div class="card"><h5>Triple A Hub</h5><p>A casa. É quem fala com expert, com mercado e com
       imprensa. Não vende curso — vende estrutura, sociedade e método.</p></div>
-    <div class="card"><h5>Triple A Society</h5><p>O ecossistema. É onde a audiência mora, onde a
-      prova social circula e de onde sai o primeiro comprador de todo produto novo.</p></div>
+    <div class="card"><h5>Triple A Society</h5><p>O mastermind do Bruno. Rede de operadores de
+      ramos distintos do digital: originação de experts, prova de campo do método e os primeiros
+      compradores de alto ticket. Não é o topo do funil de massa.</p></div>
     <div class="card"><h5>Método Triple A</h5><p>O ativo intelectual. Tem três etapas, tem
       diagnóstico e é público. É a peça que faz o Hub ser citado por gente que nunca comprou nada.</p></div>
     <div class="card"><h5>Produtos com nome próprio</h5><p>Perpétuo, mentoria e evento têm nome e
@@ -461,7 +467,7 @@ footer b{color:var(--fg-2);font-weight:500}
       se for mídia).</p>
       <ul class="cl">
         <li><strong>Ticket:</strong> entrada na faixa de R$ 2–5 mil · destravamento na faixa de R$ 25–60 mil <i>(a validar)</i></li>
-        <li><strong>Ciclo de caixa:</strong> imediato e positivo. Custo de aquisição próximo de zero na Onda 1, porque vende para audiência existente.</li>
+        <li><strong>Ciclo de caixa:</strong> imediato e positivo. Custo de aquisição próximo de zero na Onda 1 — o destravamento vende dentro da Society, e a entrada vende para a audiência pública do Bruno.</li>
         <li><strong>KPI mestre:</strong> não é receita — é <strong>taxa de alunos que atingem o marco prometido</strong>. É essa métrica que vira prova social, e prova social é a matéria-prima de todas as outras frentes.</li>
         <li><strong>Papel no ecossistema:</strong> caixa rápido, fábrica de prova social e laboratório de conteúdo. Toda dúvida de aluno é um roteiro pronto.</li>
       </ul>
@@ -483,7 +489,7 @@ footer b{color:var(--fg-2);font-weight:500}
         <li><strong>Ticket:</strong> faixa de R$ 297–997, definida por teste, com <i>order bump</i> e upsell obrigatórios desde o dia 1</li>
         <li><strong>Ciclo de caixa:</strong> negativo nos primeiros 60–90 dias (produção de criativo + aprendizado de conta), previsível depois</li>
         <li><strong>KPI mestre:</strong> margem de contribuição em D7 e LTV/CAC em 90 dias. Secundários: CPA, retenção de VSL nos primeiros 3 minutos, taxa de <i>checkout</i></li>
-        <li><strong>Papel no ecossistema:</strong> gera a lista que enche o evento, financia a autoridade e alimenta a mentoria com upsell qualificado</li>
+        <li><strong>Papel no ecossistema:</strong> é a <b>única fonte de lista própria</b> que o Hub terá — a Society é rede, não lista. É o perpétuo que enche o evento, financia a autoridade e alimenta a mentoria com upsell qualificado</li>
       </ul>
       <p class="nope"><b>O que faz falhar:</b> subir mídia sem cauda de oferta — sem bump e upsell a
       conta não fecha em nenhum cenário realista; trocar de VSL antes de ter volume estatístico
@@ -500,11 +506,25 @@ footer b{color:var(--fg-2);font-weight:500}
       e autoridade. É a frente de maior receita absoluta no curto prazo — e a que <strong>não constrói
       patrimônio</strong> se for feita sem critério.</p>
       <ul class="cl">
-        <li><strong>Remuneração:</strong> <i>rev share</i> + fee mínimo de operação. O fee existe para cobrir o custo do time quando o lançamento não performa — sem ele, o Hub trabalha de graça pelo erro do parceiro.</li>
+        <li><strong>Remuneração:</strong> <i>rev share</i>, nos dois modelos usuais do mercado — <b>50/50</b> e <b>70/30</b>. O que decide qual dos dois se aplica é <b>o quanto o Hub carrega</b>, não o tamanho do expert.</li>
         <li><strong>Ciclo:</strong> 60 a 120 dias por lançamento, caixa concentrado no fim</li>
         <li><strong>KPI mestre:</strong> margem por lançamento e <strong>% de lançamentos que viram perpétuo depois</strong> — o segundo número é o que separa sociedade de prestação de serviço</li>
         <li><strong>Teto:</strong> no máximo <strong>dois lançamentos simultâneos</strong> no ano 1. Não é conservadorismo: é o limite físico de uma operação com três sócios que também estão construindo produto próprio.</li>
       </ul>
+      <div class="tw"><table>
+        <thead><tr><th>Modelo</th><th>Quando se aplica</th><th>Quem banca a mídia</th><th>O que o Hub entrega</th></tr></thead>
+        <tbody>
+          <tr><td><b>50 / 50</b></td><td>Projetos melhores: o Hub carrega a operação de ponta a ponta e assume risco junto com o expert</td><td>Hub, ou dividida — e a verba se recupera do bruto antes do split</td><td>Estratégia, copy, VSL, mídia, funil, tecnologia e comercial. O expert entrega audiência, conteúdo e presença.</td></tr>
+          <tr><td><b>70 / 30</b><br><span style="color:var(--mut-2);font-weight:400">expert / Hub</span></td><td>Padrão de mercado: o expert já tem time e estrutura, o Hub entra em camadas específicas</td><td>Expert</td><td>Estratégia e as camadas contratadas. Risco menor, participação menor.</td></tr>
+        </tbody>
+      </table></div>
+      <p class="nope"><b>Três cláusulas que valem mais que o percentual:</b> <b>(1)</b> o split incide
+      sobre <b>receita líquida</b> — depois de reembolso, taxa de plataforma e imposto, nunca sobre o
+      número anunciado no palco; <b>(2)</b> a verba de mídia se recupera do bruto antes de qualquer
+      divisão, ou quem banca precisa de preferência na recuperação — sem isso, 50/50 com o Hub pagando
+      mídia é matematicamente pior que 70/30; <b>(3)</b> o <b>fee mínimo de operação</b> não é um
+      terceiro modelo, é o piso que cobre o custo de time quando o lançamento não performa. Sem ele,
+      o Hub trabalha de graça pelo erro do parceiro.</p>
       <div class="gate"><b>Critério de seleção — os três filtros</b>
       O Hub só entra em lançamento onde: <b>(a)</b> o expert tem audiência viva e própria, não
       comprada; <b>(b)</b> a oferta já vendeu ao menos uma vez, mesmo que mal; <b>(c)</b> existe
@@ -548,8 +568,6 @@ footer b{color:var(--fg-2);font-weight:500}
   <div class="lad">
     <div class="rung"><span class="lv">Topo</span><span class="nm">Conteúdo dos três sócios</span>
       <span class="ds">Território próprio de cada um. Entrada gratuita e permanente do funil.</span><span class="pr">R$ 0</span></div>
-    <div class="rung"><span class="lv">Base</span><span class="nm">Triple A Society</span>
-      <span class="ds">A comunidade. Onde a audiência mora, a prova social circula e o primeiro comprador de tudo aparece.</span><span class="pr">grátis ou entrada</span></div>
     <div class="rung"><span class="lv">Conversão</span><span class="nm">Webinário quinzenal</span>
       <span class="ds">Mecanismo de venda recorrente. Converte para perpétuo e para mentoria de entrada.</span><span class="pr">R$ 0</span></div>
     <div class="rung"><span class="lv">Entrada</span><span class="nm">Perpétuo (VSL)</span>
@@ -565,12 +583,21 @@ footer b{color:var(--fg-2);font-weight:500}
   </div>
 
   <div class="body">
+    <div class="call"><span class="lab">A via paralela — a Society</span>
+    <p>A Society <strong>não entra nesta esteira</strong>, e é importante que não entre. Um mastermind
+    de operadores de ramos distintos do digital não é público de produto de entrada — é
+    <strong>rede de originação</strong>. Ela liga direto nos dois degraus de cima: destravamento de
+    expert e lançamento JV, sem passar por nenhum degrau intermediário.</p>
+    <p>Confundir as duas coisas custa nos dois sentidos: vender mentoria de iniciante para membro de
+    mastermind queima a rede, e tentar encher o topo da esteira com dezenas de pessoas em vez de
+    milhares faz o perpétuo parecer desnecessário — quando ele é justamente a única lista própria que
+    o Hub vai construir.</p></div>
     <h3>O loop que faz a esteira compor</h3>
     <p>Cada aluno que destrava vira <strong>case</strong>. O case alimenta o <strong>conteúdo</strong>
     dos três e entra na <strong>VSL</strong>. A VSL com prova nova converte melhor, o que
     <strong>baixa o CAC</strong>. CAC baixo permite comprar audiência para <strong>encher o
-    evento</strong>. O evento produz os <strong>experts</strong> que viram lançamento JV. E o
-    lançamento JV traz audiência nova para a Society.</p>
+    evento</strong>. O evento produz os <strong>experts</strong> que viram lançamento JV. E cada JV bem entregue
+    traz o expert seguinte — quase sempre por indicação de dentro da Society.</p>
     <div class="call warn"><span class="lab">A regra de ouro da esteira</span>
     <p>Nenhuma frente pode depender só de tráfego pago, e nenhuma pode depender só da audiência do
     Bruno. <strong>Cada frente precisa de no mínimo duas fontes de demanda.</strong> No dia em que o
@@ -629,8 +656,9 @@ footer b{color:var(--fg-2);font-weight:500}
   <h3>A mecânica: de autoridade emprestada para autoridade própria</h3>
   <div class="grid g2">
     <div class="card"><span class="tag">Etapa 1 · mês 1–3</span><h5>Empréstimo</h5>
-      <p>Kauan e Felipe aparecem no palco do Bruno: lives na Society, aulas dentro dos produtos dele,
-      participação nos conteúdos. Custo de aquisição zero e credibilidade transferida por associação.
+      <p>Kauan e Felipe aparecem no palco do Bruno: lives na Society — que é a sala mais qualificada
+      a que eles terão acesso no ano —, aulas dentro dos produtos dele, participação nos conteúdos.
+      Custo de aquisição zero e credibilidade transferida por associação.
       É a alavanca que ninguém mais no mercado tem — e ela só existe enquanto for usada.</p></div>
     <div class="card"><span class="tag">Etapa 2 · mês 4–6</span><h5>Prova</h5>
       <p>Cada um publica em canal próprio, com cadência fixa, usando o material que só eles têm: conta
@@ -680,15 +708,17 @@ footer b{color:var(--fg-2);font-weight:500}
         <li>Contrato de sócios assinado, CNPJ, contas e estrutura fiscal definida</li>
         <li>Método Triple A documentado (3 etapas + roteiro do Diagnóstico do Teto)</li>
         <li>Reposicionamento do site e separação das duas portas</li>
-        <li>Society ativada como canal: cadência de conteúdo e ritual semanal fixo</li>
-        <li>Turma beta da mentoria de entrada, vendida <b>só para a audiência existente</b>, com depoimentos gravados desde a primeira semana</li>
+        <li><b>Diagnóstico do Teto rodado dentro da Society</b> — 8 a 12 diagnósticos com membros do mastermind. É o teste de campo do método com operadores reais, antes de ele ser vendido ao mercado</li>
+        <li>Primeiros <b>destravamentos de alto ticket</b> fechados a partir desses diagnósticos: caixa imediato, CAC zero e os primeiros casos documentados</li>
+        <li>Turma beta da mentoria de entrada, vendida para a <b>audiência pública do Bruno</b> — não para a Society. Mastermind não é público de produto de entrada. Depoimentos gravados desde a primeira semana</li>
         <li>Projeto Autoridade — Etapa 1 (empréstimo)</li>
       </ul>
       <p class="nope"><b>O que não se faz nesta onda:</b> tráfego frio, evento presencial, lançamento
       de terceiro. Nenhuma exceção — cada uma delas custa 100% da atenção de um sócio.</p>
       <div class="gate"><b>Portão para a Onda 2</b>
-      Turma beta rodando com depoimentos gravados · método documentado · contrato societário assinado.
-      Os três, não dois de três.</div>
+      Método documentado e testado em campo (mínimo 8 Diagnósticos do Teto rodados) · primeiros
+      destravamentos fechados · turma beta rodando com depoimentos gravados · contrato societário
+      assinado. Os quatro, não três de quatro.</div>
     </div>
   </div>
 
@@ -792,6 +822,7 @@ footer b{color:var(--fg-2);font-weight:500}
       <tr><td>Regra de decisão</td><td>O que exige unanimidade</td><td>Entrada de sócio, venda, dívida, mudança de marca. O resto é decisão do dono da frente.</td></tr>
       <tr><td>Desempate</td><td>Quem decide quando os três discordam</td><td>Um CEO nomeado. Sociedade de três sem desempate trava em toda decisão difícil.</td></tr>
       <tr><td>Não-concorrência</td><td>Operação fora do Hub é permitida?</td><td>Sim para o que já existe e for declarado hoje. Não para novas no mesmo escopo.</td></tr>
+      <tr><td><b>A Society</b></td><td>É ativo da PJ ou continua sendo do Bruno?</td><td>Decidir de forma explícita. Se ficar com ele, o Hub não pode contá-la como canal próprio — nem no plano, nem na avaliação da empresa.</td></tr>
       <tr><td>Saída</td><td>O que acontece com marca e Society</td><td>Cláusula escrita antes da primeira venda, com fórmula de <i>buyout</i> definida.</td></tr>
     </tbody>
   </table></div>
@@ -807,7 +838,7 @@ footer b{color:var(--fg-2);font-weight:500}
 
     <h4>Contrato-padrão de JV com expert</h4>
     <ul class="cl">
-      <li><strong>Split de receita</strong> e se há fee mínimo de operação</li>
+      <li><strong>Split de receita</strong> — 50/50 ou 70/30, incidindo sobre receita líquida, com fee mínimo de operação e regra de recuperação de mídia definidos</li>
       <li><strong>Quem banca a mídia</strong> — e o que acontece se o lançamento não paga a verba investida</li>
       <li><strong>Propriedade da lista e dos criativos</strong> gerados durante a campanha</li>
       <li><strong>Obrigações do expert</strong>: datas de gravação, presença nas lives, prazo de resposta. A causa mais comum de lançamento ruim não é estratégia — é expert que some.</li>
@@ -828,7 +859,7 @@ footer b{color:var(--fg-2);font-weight:500}
   <div class="tw"><table>
     <thead><tr><th>Onda</th><th>Contratações</th><th>Por quê agora</th></tr></thead>
     <tbody>
-      <tr><td><b>Onda 1</b></td><td>1 editor de vídeo · 1 social/community (meio período, Society) · 1 suporte/CS ao abrir a turma beta</td>
+      <tr><td><b>Onda 1</b></td><td>1 editor de vídeo · 1 social/community (meio período) · 1 suporte/CS ao abrir a turma beta</td>
         <td>O editor é o que viabiliza o Projeto Autoridade. Sem ele, o plano de conteúdo morre no mês 3 — sempre morre.</td></tr>
       <tr><td><b>Onda 2</b></td><td>1 copywriter (pode ser freela por projeto) · 1 gestor de tráfego júnior sob o Felipe · 1 designer/criativo</td>
         <td>Perpétuo é máquina de criativo. Se o volume de criativo depender do sócio, a conta trava no mês 2 de escala.</td></tr>
@@ -884,7 +915,7 @@ footer b{color:var(--fg-2);font-weight:500}
     <div class="stats">
       <div class="stat"><div class="n">01</div><div class="l">Caixa disponível e meses de operação cobertos</div></div>
       <div class="stat"><div class="n">02</div><div class="l">Margem de contribuição do perpétuo nos últimos 7 dias</div></div>
-      <div class="stat"><div class="n">03</div><div class="l">Leads próprios gerados por canal (mídia, orgânico de cada sócio, Society)</div></div>
+      <div class="stat"><div class="n">03</div><div class="l">Leads próprios por canal (mídia, orgânico de cada sócio) e indicações vindas da Society</div></div>
       <div class="stat"><div class="n">04</div><div class="l">Alunos ativos e taxa de progresso no marco prometido</div></div>
     </div>
   </div>
@@ -947,7 +978,7 @@ footer b{color:var(--fg-2);font-weight:500}
       <tr><td><b>/metodo</b></td><td>Todos</td><td>O Método Triple A público. É a peça que faz o Hub ser citado por quem nunca comprou.</td></tr>
       <tr><td><b>/experts</b></td><td>Porta A</td><td>Prova de lançamentos e destravamentos. CTA = aplicação para o Diagnóstico do Teto, não formulário de contato.</td></tr>
       <tr><td><b>/mentoria</b></td><td>Porta B</td><td>Entrada e destravamento, com o marco prometido explícito e os pré-requisitos declarados.</td></tr>
-      <tr><td><b>/society</b></td><td>Audiência</td><td>A comunidade. Porta de entrada gratuita ou de baixo ticket para toda a esteira.</td></tr>
+      <tr><td><b>/society</b></td><td>Porta A</td><td>O mastermind do Bruno, por aplicação. Não é captura de lista — é filtro. Se a Society ficar fora da PJ, esta página sai do site do Hub e vive no domínio dele.</td></tr>
       <tr><td><b>/eventos</b></td><td>Todos</td><td>Webinário recorrente (captura) e presencial (autoridade e alto ticket).</td></tr>
       <tr><td><b>/bruno · /kauan · /felipe</b></td><td>Mercado</td><td>Território, prova e conteúdo de cada sócio. A infraestrutura do Projeto Autoridade.</td></tr>
     </tbody>
@@ -1006,9 +1037,9 @@ footer b{color:var(--fg-2);font-weight:500}
     <ol class="nl">
       <li><strong>Divisão de equity e regra de vesting.</strong> Percentual de cada um e o que acontece se alguém sair no mês 8.</li>
       <li><strong>Qual é o produto perpétuo.</strong> Tema e promessa: é sobre entrar no mercado, sobre tráfego para VSL, ou sobre estrutura de operação? A resposta define a VSL, o público e o upsell.</li>
-      <li><strong>O que é a Society hoje.</strong> Gratuita, paga, ou paga de entrada? É topo de funil ou é produto? Quantas pessoas ativas, e a base é acessível por e-mail e WhatsApp?</li>
+      <li><strong>A Society entra na sociedade?</strong> É ativo da PJ ou permanece do Bruno? E quantos membros ativos, de quais nichos, e quantos deles se qualificam hoje para destravamento ou JV? Essa lista é a agenda comercial inteira da Onda 1.</li>
       <li><strong>Ticket e formato da mentoria de entrada.</strong> Duração, tamanho de turma, quantidade de encontros ao vivo e qual é o marco prometido ao aluno.</li>
-      <li><strong>Faixa de <i>rev share</i> padrão para JV</strong> e se haverá fee mínimo de operação.</li>
+      <li><strong>A regra de corte entre 50/50 e 70/30.</strong> Os dois modelos estão definidos — falta o critério objetivo que decide qual se aplica, quem banca a mídia em cada um, como ela se recupera, e o valor do fee mínimo de operação.</li>
       <li><strong>Orçamento de mídia disponível para a Onda 2</strong> e reserva de caixa atual da operação.</li>
       <li><strong>Operações fora do Hub.</strong> Cada sócio declara hoje o que mantém, e fica definido o que pode ser criado daqui em diante.</li>
       <li><strong>Quem é o CEO de fato</strong> — quem decide quando os três discordam.</li>
@@ -1017,8 +1048,10 @@ footer b{color:var(--fg-2);font-weight:500}
     </ol>
 
     <div class="call warn"><span class="lab">Premissas assumidas neste documento</span>
-    <p>Na ausência dos dados acima, assumi: que a Society tem base própria acessível e utilizável para
-    a venda beta da Onda 1; que os três sócios têm disponibilidade integral para o Hub; que existe
+    <p>Na ausência dos dados acima, assumi: que a Society é rede de originação e não lista de venda em
+    volume — ou seja, que o Hub começa <strong>sem nenhuma audiência própria de produto</strong>, e que
+    o perpétuo da Onda 2 é a primeira lista que ele vai ter; que os três sócios têm disponibilidade
+    integral para o Hub; que existe
     caixa para sustentar 90 dias de operação sem receita nova; e que a marca Triple A e o domínio
     estão sob controle da sociedade e não de pessoa física. <strong>Qualquer uma dessas premissas
     sendo falsa muda a Onda 1</strong> — e é por isso que ela é a primeira conversa, não a última.</p></div>
