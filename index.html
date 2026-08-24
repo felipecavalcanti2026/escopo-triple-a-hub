@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triple A Hub — Escopo de construção</title>
+<meta name="description" content="Documento de trabalho: as quatro frentes do Triple A Hub, quem é dono de cada uma, em que ordem entram no ar e o que precisa estar decidido antes da primeira venda.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Overused Grotesk';src:url(https://cdn.jsdelivr.net/gh/nicholasio/overused-grotesk-fonts@latest/fonts/OverusedGrotesk-Light.woff2) format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Overused Grotesk';src:url(https://cdn.jsdelivr.net/gh/nicholasio/overused-grotesk-fonts@latest/fonts/OverusedGrotesk-Roman.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Overused Grotesk';src:url(https://cdn.jsdelivr.net/gh/nicholasio/overused-grotesk-fonts@latest/fonts/OverusedGrotesk-Medium.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Overused Grotesk';src:url(https://cdn.jsdelivr.net/gh/nicholasio/overused-grotesk-fonts@latest/fonts/OverusedGrotesk-SemiBold.woff2) format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:'Overused Grotesk';src:url(https://cdn.jsdelivr.net/gh/nicholasio/overused-grotesk-fonts@latest/fonts/OverusedGrotesk-Bold.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+  --bg:#0a0a0a; --bg-2:#0f0f0f; --card:#141414; --card-2:#191919;
+  --fg:#f2f2f2; --fg-2:#c4c4c4; --mut:#8c8c8c; --mut-2:#6a6a6a;
+  --line:#262626; --line-2:#1c1c1c;
+  --acc:#ff4538; --acc-lt:#ff7066; --acc-dk:#7a1c15;
+  --ok:#3ecf8e; --ok-bg:rgba(62,207,142,.09);
+  --warn:#e5a23c; --warn-bg:rgba(229,162,60,.09);
+  --font:'Overused Grotesk','Host Grotesk',Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:74px}
+body{margin:0;background:var(--bg);color:var(--fg-2);font-family:var(--font);
+  font-size:16.5px;line-height:1.66;font-weight:400;-webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility}
+.wrap{max-width:1010px;margin:0 auto;padding:0 26px}
+p{margin:0 0 17px}
+strong{color:var(--fg);font-weight:600}
+em{font-style:normal;color:var(--fg);font-weight:500}
+a{color:var(--acc-lt);text-decoration:none;border-bottom:1px solid rgba(255,112,102,.3)}
+a:hover{border-bottom-color:var(--acc-lt)}
+hr{border:0;border-top:1px solid var(--line);margin:44px 0}
+
+/* ---------- NAV ---------- */
+nav.top{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.86);
+  backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;gap:16px;height:56px}
+nav.top .brand{font-weight:700;font-size:14.5px;letter-spacing:-.01em;color:var(--fg);white-space:nowrap}
+nav.top .brand span{color:var(--acc)}
+nav.top .links{display:flex;gap:1px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+nav.top .links::-webkit-scrollbar{display:none}
+nav.top a{color:var(--mut);font-size:12px;font-weight:500;padding:6px 6px;border:0;border-radius:5px;white-space:nowrap}
+nav.top a:hover{color:var(--fg);background:var(--card-2)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);
+  padding:94px 0 78px;
+  background-image:radial-gradient(ellipse 820px 380px at 82% -12%, rgba(255,69,56,.20), transparent 68%),
+                   linear-gradient(180deg,#0d0d0d,#0a0a0a)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line-2) 1px,transparent 1px),linear-gradient(90deg,var(--line-2) 1px,transparent 1px);
+  background-size:64px 64px;
+  -webkit-mask-image:radial-gradient(ellipse 900px 500px at 20% 0%,#000,transparent 72%);
+  mask-image:radial-gradient(ellipse 900px 500px at 20% 0%,#000,transparent 72%);opacity:.75}
+.hero .wrap{position:relative}
+.kick{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:600;
+  letter-spacing:.19em;text-transform:uppercase;color:var(--acc-lt);
+  background:rgba(255,69,56,.08);border:1px solid rgba(255,69,56,.24);
+  padding:6px 13px;border-radius:100px}
+.hero h1{font-size:clamp(38px,5.6vw,62px);line-height:1.04;letter-spacing:-.035em;font-weight:600;
+  color:var(--fg);margin:26px 0 24px;max-width:17ch}
+.hero h1 em{color:var(--acc);font-weight:600}
+.hero .lead{font-size:19.5px;line-height:1.56;color:var(--mut);max-width:60ch;font-weight:300;margin:0}
+.hero .meta{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px 30px;font-size:13px;color:var(--mut-2)}
+.hero .meta b{color:var(--fg-2);font-weight:500}
+
+/* ---------- SECTIONS ---------- */
+section{padding:74px 0;border-bottom:1px solid var(--line-2)}
+section:nth-child(even){background:var(--bg-2)}
+.shead{display:flex;align-items:flex-start;gap:20px;margin-bottom:34px}
+.snum{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--acc);
+  border:1px solid rgba(255,69,56,.3);border-radius:6px;padding:5px 9px;flex:none;margin-top:7px}
+h2{font-size:clamp(26px,3.4vw,36px);line-height:1.14;letter-spacing:-.028em;font-weight:600;
+  color:var(--fg);margin:0}
+.sub{font-size:16.5px;color:var(--mut);margin:9px 0 0;font-weight:300;max-width:66ch}
+h3{font-size:19px;line-height:1.3;letter-spacing:-.018em;font-weight:600;color:var(--fg);margin:38px 0 13px}
+h4{font-size:14px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--mut-2);margin:32px 0 14px}
+.body{max-width:78ch}
+
+/* ---------- CARDS ---------- */
+.grid{display:grid;gap:14px;margin:22px 0}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:22px 22px 20px}
+.card h5{margin:0 0 9px;font-size:16.5px;font-weight:600;color:var(--fg);letter-spacing:-.015em}
+.card p{margin:0 0 10px;font-size:14.8px;line-height:1.58;color:var(--mut)}
+.card p:last-child{margin-bottom:0}
+.card .tag{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--acc-lt);margin-bottom:11px}
+.card.acc{border-color:rgba(255,69,56,.32);
+  background:linear-gradient(180deg,rgba(255,69,56,.055),var(--card))}
+
+/* ---------- CALLOUTS ---------- */
+.call{border-left:2px solid var(--acc);background:linear-gradient(90deg,rgba(255,69,56,.07),transparent 78%);
+  padding:20px 24px;margin:26px 0;border-radius:0 8px 8px 0}
+.call .lab{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);display:block;margin-bottom:8px}
+.call p{margin:0;color:var(--fg-2);font-size:16px}
+.call p+p{margin-top:12px}
+.call.warn{border-left-color:var(--warn);background:linear-gradient(90deg,var(--warn-bg),transparent 78%)}
+.call.warn .lab{color:var(--warn)}
+.call.ok{border-left-color:var(--ok);background:linear-gradient(90deg,var(--ok-bg),transparent 78%)}
+.call.ok .lab{color:var(--ok)}
+
+/* ---------- LISTS ---------- */
+ul.cl{list-style:none;padding:0;margin:16px 0}
+ul.cl li{position:relative;padding-left:22px;margin-bottom:11px;font-size:16px;color:var(--mut)}
+ul.cl li::before{content:"";position:absolute;left:2px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+ul.cl li strong{color:var(--fg)}
+ol.nl{counter-reset:n;list-style:none;padding:0;margin:18px 0}
+ol.nl li{counter-increment:n;position:relative;padding-left:40px;margin-bottom:15px;font-size:16px;color:var(--mut)}
+ol.nl li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:1px;
+  font-size:12px;font-weight:700;color:var(--acc);border:1px solid rgba(255,69,56,.28);
+  border-radius:5px;padding:2px 6px;line-height:1.4}
+ol.nl li strong{color:var(--fg)}
+
+/* ---------- TABLE ---------- */
+.tw{overflow-x:auto;margin:24px 0;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:14.6px;min-width:620px}
+th{text-align:left;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+  color:var(--mut-2);background:var(--card-2);padding:13px 16px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:14px 16px;border-bottom:1px solid var(--line-2);color:var(--mut);vertical-align:top;line-height:1.52}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--fg);font-weight:500}
+td b{color:var(--fg);font-weight:600}
+.tw table tbody tr:hover td{background:rgba(255,255,255,.014)}
+
+/* ---------- WAVES ---------- */
+.wave{border:1px solid var(--line);border-radius:12px;background:var(--card);
+  padding:0;margin:16px 0;overflow:hidden}
+.wave .wh{display:flex;align-items:center;gap:16px;padding:18px 22px;
+  border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(255,69,56,.08),transparent 60%)}
+.wave .wn{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc);flex:none}
+.wave .wt{font-size:18.5px;font-weight:600;color:var(--fg);letter-spacing:-.02em}
+.wave .wo{margin-left:auto;font-size:12.5px;color:var(--mut-2);white-space:nowrap}
+.wave .wo b{color:var(--fg-2);font-weight:500}
+.wave .wb{padding:20px 22px 22px}
+.wave .wb p{font-size:15px;color:var(--mut)}
+.wave ul.cl li{font-size:15px;margin-bottom:8px}
+.gate{margin-top:16px;padding:13px 16px;border:1px dashed var(--line);border-radius:8px;
+  font-size:14.5px;color:var(--mut)}
+.gate b{color:var(--ok);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:11px;
+  display:block;margin-bottom:5px}
+.nope{margin-top:12px;font-size:14.5px;color:var(--mut-2)}
+.nope b{color:var(--acc-lt);font-weight:600}
+
+/* ---------- LADDER ---------- */
+.lad{display:flex;flex-direction:column;gap:8px;margin:26px 0}
+.rung{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:9px;
+  background:var(--card);padding:14px 18px}
+.rung .lv{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mut-2);width:74px;flex:none}
+.rung .nm{font-size:15.5px;font-weight:600;color:var(--fg);flex:none;width:210px;letter-spacing:-.015em}
+.rung .ds{font-size:14.3px;color:var(--mut);flex:1}
+.rung .pr{font-size:13px;color:var(--acc-lt);font-weight:500;white-space:nowrap;flex:none}
+.rung:nth-child(1){opacity:.72}
+.rung:nth-child(2){opacity:.8}
+
+/* ---------- TERRITORY ---------- */
+.terr{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:0;overflow:hidden}
+.terr+.terr{margin-top:14px}
+.terr .th{padding:17px 22px 15px;border-bottom:1px solid var(--line)}
+.terr .nm{font-size:21px;font-weight:600;color:var(--fg);letter-spacing:-.024em}
+.terr .rl{font-size:13.5px;color:var(--acc-lt);font-weight:500;margin-top:2px}
+.terr .tb{padding:18px 22px 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.terr .tb div{font-size:14.3px;color:var(--mut);line-height:1.55}
+.terr .tb b{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mut-2);font-weight:600;margin-bottom:6px}
+
+/* ---------- BIG STAT ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0}
+.stat{border:1px solid var(--line);border-radius:10px;background:var(--card);padding:20px}
+.stat .n{font-size:32px;font-weight:600;letter-spacing:-.03em;color:var(--acc);line-height:1.1}
+.stat .l{font-size:13.5px;color:var(--mut);margin-top:7px;line-height:1.45}
+
+/* ---------- FOOTER ---------- */
+footer{padding:52px 0 66px;background:var(--bg);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:baseline;
+  font-size:13px;color:var(--mut-2)}
+footer b{color:var(--fg-2);font-weight:500}
+
+@media(max-width:860px){
+  .g2,.g3,.stats{grid-template-columns:1fr}
+  .terr .tb{grid-template-columns:1fr}
+  .rung{flex-wrap:wrap;gap:6px 14px}
+  .rung .nm{width:auto}
+  .rung .lv{width:auto}
+  nav.top .brand{display:none}
+  nav.top .links{margin-left:0}
+  section{padding:56px 0}
+  .shead{gap:14px}
+}
+</style>
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <div class="brand">TRIPLE A <span>HUB</span></div>
+  <div class="links">
+    <a href="#tese">Tese</a><a href="#partida">Partida</a><a href="#identidade">Identidade</a>
+    <a href="#metodo">Método</a><a href="#frentes">Frentes</a><a href="#esteira">Esteira</a>
+    <a href="#autoridade">Autoridade</a><a href="#ondas">Ondas</a><a href="#societario">Societário</a>
+    <a href="#time">Time</a><a href="#caixa">Caixa</a><a href="#governanca">Governança</a>
+    <a href="#site">Site</a><a href="#riscos">Riscos</a><a href="#decisoes">Decisões</a>
+  </div>
+</div></nav>
+
+<div class="hero"><div class="wrap">
+  <span class="kick">Documento de sociedade · v1</span>
+  <h1>O escopo de construção do <em>Triple A Hub</em></h1>
+  <p class="lead">De hub de crescimento para casa de produtos digitais. As quatro frentes, quem é dono de
+  cada uma, em que ordem entram no ar, e o que precisa estar decidido antes da primeira venda.</p>
+  <div class="meta">
+    <span><b>Preparado por</b> Felipe Cavalcanti</span>
+    <span><b>Data</b> 24 de agosto de 2026</span>
+    <span><b>Para</b> Bruno Guerra · Kauan · Felipe</span>
+    <span><b>Status</b> base para a reunião de sociedade</span>
+  </div>
+</div></div>
+
+<!-- ================= 00 TESE ================= -->
+<section id="tese"><div class="wrap">
+  <div class="shead"><div class="snum">00</div><div>
+    <h2>A tese, em uma página</h2>
+    <p class="sub">Se você só ler esta seção, saia com estas seis decisões.</p>
+  </div></div>
+  <div class="body">
+    <div class="call"><span class="lab">O ponto de partida honesto</span>
+    <p>O Hub não tem problema de oportunidade. Tem problema de <strong>sequência</strong> e de
+    <strong>concentração</strong>. Quatro frentes, três sócios e uma única autoridade pública é a
+    configuração clássica de uma operação que fatura bem no primeiro ano e trava no segundo — porque
+    tudo que ela construiu ficou pendurado em uma agenda só.</p></div>
+
+    <ol class="nl">
+      <li><strong>O Hub é uma casa de produtos digitais, não uma agência.</strong> Isso muda o que se
+      vende, para quem, e — o mais importante — o que sobra de ativo depois que o dinheiro entra.</li>
+      <li><strong>Duas portas, uma marca.</strong> Expert (tem audiência, quer estrutura) e operador
+      (quer entrar ou destravar) são públicos com objeção, preço e funil incompatíveis. Nunca dividem
+      a mesma página nem a mesma lista.</li>
+      <li><strong>Atitude · Ação · Abundância deixa de ser assinatura e vira método.</strong> As três
+      palavras já estão na narrativa do Bruno. Transformadas em três etapas com diagnóstico, viram
+      ativo intelectual, script comercial e pauta de conteúdo — de uma vez só.</li>
+      <li><strong>As quatro frentes não entram juntas. Entram em quatro ondas de 90 dias</strong>,
+      cada uma com um sócio dono e cada uma produzindo a matéria-prima da onda seguinte.</li>
+      <li><strong>O projeto mais importante do ano 1 não é produto — é fabricar autoridade para
+      Kauan e Felipe.</strong> Sem isso, o Triple A Hub é a marca pessoal do Bruno com dois sócios
+      operando por trás. Com isso, é uma empresa.</li>
+      <li><strong>Societário e propriedade de ativos resolvidos antes da primeira venda</strong>,
+      não depois da primeira briga. Lista, marca, método e contas de anúncio pertencem à PJ.</li>
+    </ol>
+
+    <div class="call warn"><span class="lab">O que este documento não é</span>
+    <p>Não é projeção de faturamento. Não há número de receita aqui porque nenhum dos dados que
+    permitiriam projetar — orçamento de mídia disponível, tamanho real da base, ticket definido —
+    está fechado. O que existe aqui é o <strong>modelo</strong>, as <strong>regras de decisão</strong>
+    e os <strong>critérios de parada</strong>. A projeção vem depois da seção 14.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 01 PARTIDA ================= -->
+<section id="partida"><div class="wrap">
+  <div class="shead"><div class="snum">01</div><div>
+    <h2>Onde estamos hoje</h2>
+    <p class="sub">Inventário do que já é ativo, do que ainda não existe, e dos três riscos que
+    estruturam todas as decisões seguintes.</p>
+  </div></div>
+
+  <h4>O que já existe — e é ativo de verdade</h4>
+  <div class="grid g3">
+    <div class="card"><span class="tag">Autoridade</span><h5>O rosto do Bruno</h5>
+      <p>Reputação construída, histórico de grandes lançamentos com experts relevantes e acesso a um
+      círculo de pessoas que o mercado não alcança por anúncio. É o ativo mais caro da mesa.</p></div>
+    <div class="card"><span class="tag">Distribuição</span><h5>Triple A Society</h5>
+      <p>Uma comunidade já formada. É o único canal de distribuição próprio que o Hub tem hoje e a
+      diferença entre lançar para o mercado ou lançar para uma audiência.</p></div>
+    <div class="card"><span class="tag">Narrativa</span><h5>Atitude · Ação · Abundância</h5>
+      <p>Uma filosofia já publicada e já associada ao Bruno. Não precisa ser inventada — precisa ser
+      operacionalizada.</p></div>
+    <div class="card"><span class="tag">Execução</span><h5>A cadeia completa in-house</h5>
+      <p>Estratégia de lançamento e perpétuo (Kauan), mídia paga e VSL (Felipe), originação e palco
+      (Bruno). Raro: a maioria dos hubs terceiriza pelo menos uma dessas três.</p></div>
+    <div class="card"><span class="tag">Prova</span><h5>Histórico de 8 dígitos</h5>
+      <p>Investimento e faturamento gerenciados. Serve de credencial para as duas portas — desde que
+      seja contado com número e contexto, não como adjetivo.</p></div>
+    <div class="card"><span class="tag">Infra</span><h5>Marca, site e rastreamento</h5>
+      <p>Domínio, identidade visual definida, GTM e Pixel já instalados. A base técnica está de pé;
+      é a mensagem que está no modelo antigo.</p></div>
+  </div>
+
+  <h4>O que não existe</h4>
+  <div class="body">
+    <ul class="cl">
+      <li><strong>Produto próprio no ar.</strong> Todo o histórico é operação para terceiros. O Hub
+      sabe fazer lançamento — mas nunca lançou a si mesmo.</li>
+      <li><strong>Receita perpétua.</strong> Hoje a receita é evento: entra em picos e depende de
+      alguém dizer sim. Não há nada rodando enquanto os três dormem.</li>
+      <li><strong>Base própria sob controle.</strong> A audiência mora nas plataformas e nos experts.
+      Quando o lançamento acaba, a lista fica com quem?</li>
+      <li><strong>Autoridade distribuída.</strong> Um de três sócios tem rosto público. Os outros dois
+      são invisíveis para o mercado — inclusive para os experts que deveriam querer contratá-los.</li>
+      <li><strong>Comunicação alinhada.</strong> O site vende serviço de agência para empresa que
+      fatura R$ 50k/mês. O novo modelo vende produto e sociedade. São dois negócios diferentes.</li>
+    </ul>
+  </div>
+
+  <h4>Os três riscos estruturais</h4>
+  <div class="grid g3">
+    <div class="card acc"><span class="tag">Risco 01</span><h5>Concentração de autoridade</h5>
+      <p>Se toda venda passa pelo rosto do Bruno, o Hub não é uma empresa: é uma agenda. O teto de
+      escala vira o teto de horas dele, o risco de saída vira risco de extinção, e o valor da empresa
+      sem ele tende a zero.</p></div>
+    <div class="card acc"><span class="tag">Risco 02</span><h5>Quatro frentes simultâneas</h5>
+      <p>Lançamento, perpétuo, evento e mentoria têm ciclos de caixa, times e cadências incompatíveis.
+      Rodar as quatro no mesmo trimestre com três sócios entrega quatro operações medianas — e
+      medíocre em mercado de expert não vende.</p></div>
+    <div class="card acc"><span class="tag">Risco 03</span><h5>Serviço disfarçado de ativo</h5>
+      <p>Lançar para experts paga muito bem e não acumula nada. Se ao fim de 12 meses o Hub só tiver
+      feito lançamentos de terceiros, terá faturado alto e construído zero patrimônio próprio.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 02 IDENTIDADE ================= -->
+<section id="identidade"><div class="wrap">
+  <div class="shead"><div class="snum">02</div><div>
+    <h2>A decisão de identidade</h2>
+    <p class="sub">Antes de definir frentes, é preciso definir o que o Hub é. Tudo o mais decorre disso.</p>
+  </div></div>
+  <div class="body">
+    <div class="call"><span class="lab">Definição</span>
+    <p>O Triple A Hub é uma <strong>casa de produtos digitais que opera com método próprio</strong> —
+    para produtos próprios e para um número restrito de experts selecionados.</p></div>
+    <p>A palavra que muda tudo é <em>casa</em>. Agência vende execução e é paga por ela. Casa de
+    produtos constrói coisas que continuam gerando receita depois que o trabalho acabou. É a diferença
+    entre faturar e acumular.</p>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th></th><th>Agência (o modelo antigo)</th><th>Casa de produtos (o novo)</th></tr></thead>
+    <tbody>
+      <tr><td>O que vende</td><td>Horas, execução, gestão</td><td>Produtos próprios e participação em produtos alheios</td></tr>
+      <tr><td>Quem paga</td><td>Empresa cliente</td><td>Aluno, mentorado, expert-parceiro</td></tr>
+      <tr><td>Forma da receita</td><td>Fee mensal</td><td>Venda direta + <i>rev share</i></td></tr>
+      <tr><td>O que fica de ativo</td><td>Portfólio de cases</td><td>Lista, catálogo, método, marca</td></tr>
+      <tr><td>O que limita o crescimento</td><td>Número de contas atendidas</td><td>Qualidade da oferta e custo de aquisição</td></tr>
+      <tr><td>Risco principal</td><td>Perder um cliente grande</td><td>CAC subir sem a oferta acompanhar</td></tr>
+      <tr><td>Valor da empresa</td><td>Múltiplo baixo, depende do time</td><td>Múltiplo alto, depende do ativo</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Arquitetura de marca</h3>
+  <div class="body">
+    <p>Recomendação: <strong>marca-mãe endossante com produtos nomeados</strong>. Não masterbrand puro
+    (tudo se chamando Triple A) e não marcas soltas.</p>
+  </div>
+  <div class="grid g2">
+    <div class="card"><h5>Triple A Hub</h5><p>A casa. É quem fala com expert, com mercado e com
+      imprensa. Não vende curso — vende estrutura, sociedade e método.</p></div>
+    <div class="card"><h5>Triple A Society</h5><p>O ecossistema. É onde a audiência mora, onde a
+      prova social circula e de onde sai o primeiro comprador de todo produto novo.</p></div>
+    <div class="card"><h5>Método Triple A</h5><p>O ativo intelectual. Tem três etapas, tem
+      diagnóstico e é público. É a peça que faz o Hub ser citado por gente que nunca comprou nada.</p></div>
+    <div class="card"><h5>Produtos com nome próprio</h5><p>Perpétuo, mentoria e evento têm nome e
+      promessa próprios, endossados por "uma operação Triple A Hub".</p></div>
+  </div>
+  <div class="body">
+    <p><strong>Por que não masterbrand puro:</strong> cada lançamento de expert dilui a marca-mãe e
+    cada produto passa a competir com o outro pela mesma promessa. <strong>Por que não marcas
+    soltas:</strong> perde-se o acúmulo — cada produto teria que construir confiança do zero, que é
+    exatamente o custo que o Bruno já pagou.</p>
+  </div>
+
+  <h3>As duas portas</h3>
+  <div class="grid g2">
+    <div class="card acc"><span class="tag">Porta A</span><h5>Expert</h5>
+      <p>"Você tem audiência e produto, e quer estrutura para escalar ou destravar."</p>
+      <p>Vende: parceria, mentoria de destravamento, operação de lançamento.<br>
+      Ticket: alto ou <i>rev share</i>. Ciclo: longo, relacional.<br>
+      Dono: <b>Bruno</b>.</p></div>
+    <div class="card acc"><span class="tag">Porta B</span><h5>Operador</h5>
+      <p>"Você quer entrar no mercado digital, ou já entrou e está travado."</p>
+      <p>Vende: perpétuo de entrada, mentoria em grupo, evento.<br>
+      Ticket: baixo a médio. Ciclo: curto, escalável por mídia.<br>
+      Dono: <b>Kauan e Felipe</b>.</p></div>
+  </div>
+  <div class="body">
+    <div class="call warn"><span class="lab">Regra inegociável</span>
+    <p>As duas portas nunca dividem a mesma landing page, a mesma lista, o mesmo criativo ou a mesma
+    reunião de números. Misturar as duas é o erro que faz o expert achar que o Hub é escolinha e o
+    aluno achar que não é para ele.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 03 MÉTODO ================= -->
+<section id="metodo"><div class="wrap">
+  <div class="shead"><div class="snum">03</div><div>
+    <h2>O Método Triple A</h2>
+    <p class="sub">Três palavras que já existem na narrativa, transformadas em três etapas
+    operacionais — e em um diagnóstico comercial.</p>
+  </div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Etapa</th><th>Pergunta que responde</th><th>O que se constrói</th><th>Sintoma de quem está travado aqui</th></tr></thead>
+    <tbody>
+      <tr><td><b>Atitude</b></td><td>Quem eu sou neste mercado e o que exatamente eu vendo?</td>
+        <td>Posicionamento, promessa, oferta, preço, público</td>
+        <td>Fatura, mas por indicação. Não sabe explicar por que compram dele. Toda venda é uma negociação nova.</td></tr>
+      <tr><td><b>Ação</b></td><td>Como isso vira venda todo dia, e não só quando eu apareço?</td>
+        <td>VSL, funil, mídia paga, estrutura de lançamento, comercial</td>
+        <td>Tem oferta boa e vive de picos. Lança, fatura, some. CAC imprevisível, mês seguinte incerto.</td></tr>
+      <tr><td><b>Abundância</b></td><td>Como isso cresce sem depender de mim?</td>
+        <td>Perpétuo, recorrência, time, delegação, margem</td>
+        <td>Fatura alto e é o gargalo da própria empresa. Sem ele, a operação para. Margem some quando escala.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="body">
+    <div class="call"><span class="lab">A ferramenta comercial — o Diagnóstico do Teto</span>
+    <p>Todo teto de faturamento é <strong>um dos três A's quebrado</strong>. O expert que fatura
+    R$ 200 mil e não passa disso raramente tem problema de tráfego — tem um A quebrado, e
+    normalmente não é o A que ele acha.</p>
+    <p>Descobrir qual é <strong>a oferta gratuita de entrada</strong> da Porta A: uma call de
+    diagnóstico com roteiro fixo. E é, ao mesmo tempo, a peça de conteúdo mais replicável que os três
+    sócios têm — porque cada diagnóstico vira um episódio.</p></div>
+
+    <p>Isto resolve três problemas de uma vez: dá <strong>método proprietário</strong> ao Hub (o que
+    justifica preço e diferencia de agência), dá <strong>roteiro de conteúdo</strong> para Kauan e
+    Felipe (que precisam de pauta constante), e dá <strong>script comercial</strong> para a porta de
+    alto ticket. Nenhuma dessas três coisas precisa ser inventada — todas caem de uma vez quando as
+    três palavras viram etapas.</p>
+
+    <div class="call ok"><span class="lab">Entrega concreta da Onda 1</span>
+    <p>O método escrito: definição de cada etapa, os sinais de que a pessoa está travada em cada uma,
+    o roteiro da call de diagnóstico, e o que o Hub vende em cada etapa. Documento único, ~15 páginas,
+    versão pública resumida no site.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 04 FRENTES ================= -->
+<section id="frentes"><div class="wrap">
+  <div class="shead"><div class="snum">04</div><div>
+    <h2>As quatro frentes</h2>
+    <p class="sub">Cada uma com dono único, ticket, ciclo de caixa, KPI mestre e — o mais importante —
+    a razão específica pela qual ela falha.</p>
+  </div></div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Frente 01</span><span class="wt">Mentorias</span>
+      <span class="wo"><b>Kauan</b> (entrada) · <b>Bruno</b> (destravamento)</span></div>
+    <div class="wb">
+      <p>Dois produtos distintos sob o mesmo guarda-chuva, e confundi-los é o erro mais comum do
+      mercado. <strong>Mentoria de entrada</strong>: em grupo, para quem quer começar no mercado
+      digital. <strong>Destravamento</strong>: 1:1 ou grupo pequeno, para o expert que já fatura e
+      bateu no teto — quem entrega é definido pelo A quebrado (Kauan se for Ação/estrutura, Felipe
+      se for mídia).</p>
+      <ul class="cl">
+        <li><strong>Ticket:</strong> entrada na faixa de R$ 2–5 mil · destravamento na faixa de R$ 25–60 mil <i>(a validar)</i></li>
+        <li><strong>Ciclo de caixa:</strong> imediato e positivo. Custo de aquisição próximo de zero na Onda 1, porque vende para audiência existente.</li>
+        <li><strong>KPI mestre:</strong> não é receita — é <strong>taxa de alunos que atingem o marco prometido</strong>. É essa métrica que vira prova social, e prova social é a matéria-prima de todas as outras frentes.</li>
+        <li><strong>Papel no ecossistema:</strong> caixa rápido, fábrica de prova social e laboratório de conteúdo. Toda dúvida de aluno é um roteiro pronto.</li>
+      </ul>
+      <p class="nope"><b>O que faz falhar:</b> virar curso gravado com nome de mentoria; prometer
+      faturamento em vez de prometer estrutura; e aceitar no destravamento quem ainda não tem produto
+      nem audiência — sem os dois, não há teto para destravar, há começo do zero.</p>
+    </div>
+  </div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Frente 02</span><span class="wt">Perpétuo com VSL</span>
+      <span class="wo"><b>Felipe</b></span></div>
+    <div class="wb">
+      <p>O ativo. Produto de entrada do método, vendido 100% para tráfego frio, sustentado por mídia
+      paga. É a <strong>única frente que constrói lista própria em escala e que roda sem os
+      sócios</strong> — e por isso é a que define se o Hub vira empresa ou continua sendo três
+      pessoas talentosas.</p>
+      <ul class="cl">
+        <li><strong>Ticket:</strong> faixa de R$ 297–997, definida por teste, com <i>order bump</i> e upsell obrigatórios desde o dia 1</li>
+        <li><strong>Ciclo de caixa:</strong> negativo nos primeiros 60–90 dias (produção de criativo + aprendizado de conta), previsível depois</li>
+        <li><strong>KPI mestre:</strong> margem de contribuição em D7 e LTV/CAC em 90 dias. Secundários: CPA, retenção de VSL nos primeiros 3 minutos, taxa de <i>checkout</i></li>
+        <li><strong>Papel no ecossistema:</strong> gera a lista que enche o evento, financia a autoridade e alimenta a mentoria com upsell qualificado</li>
+      </ul>
+      <p class="nope"><b>O que faz falhar:</b> subir mídia sem cauda de oferta — sem bump e upsell a
+      conta não fecha em nenhum cenário realista; trocar de VSL antes de ter volume estatístico
+      (matar um ângulo com 40 vendas é chute, não decisão); e tratar perpétuo como lançamento, com
+      picos de verba e silêncio depois.</p>
+    </div>
+  </div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Frente 03</span><span class="wt">Lançamentos com experts</span>
+      <span class="wo"><b>Kauan</b> (operação) · <b>Bruno</b> (originação)</span></div>
+    <div class="wb">
+      <p>Modelo de <i>joint venture</i>: o Hub entra com estrutura e execução, o expert com audiência
+      e autoridade. É a frente de maior receita absoluta no curto prazo — e a que <strong>não constrói
+      patrimônio</strong> se for feita sem critério.</p>
+      <ul class="cl">
+        <li><strong>Remuneração:</strong> <i>rev share</i> + fee mínimo de operação. O fee existe para cobrir o custo do time quando o lançamento não performa — sem ele, o Hub trabalha de graça pelo erro do parceiro.</li>
+        <li><strong>Ciclo:</strong> 60 a 120 dias por lançamento, caixa concentrado no fim</li>
+        <li><strong>KPI mestre:</strong> margem por lançamento e <strong>% de lançamentos que viram perpétuo depois</strong> — o segundo número é o que separa sociedade de prestação de serviço</li>
+        <li><strong>Teto:</strong> no máximo <strong>dois lançamentos simultâneos</strong> no ano 1. Não é conservadorismo: é o limite físico de uma operação com três sócios que também estão construindo produto próprio.</li>
+      </ul>
+      <div class="gate"><b>Critério de seleção — os três filtros</b>
+      O Hub só entra em lançamento onde: <b>(a)</b> o expert tem audiência viva e própria, não
+      comprada; <b>(b)</b> a oferta já vendeu ao menos uma vez, mesmo que mal; <b>(c)</b> existe
+      caminho para perpetuar depois. Faltando qualquer um dos três, é serviço de agência com nome de
+      sociedade — e o Hub deve recusar.</div>
+    </div>
+  </div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Frente 04</span><span class="wt">Eventos e webinários</span>
+      <span class="wo"><b>Bruno</b></span></div>
+    <div class="wb">
+      <p>São duas coisas diferentes com o mesmo nome, e o KPI de uma destrói a outra se forem
+      confundidas.</p>
+      <div class="grid g2" style="margin-top:6px">
+        <div class="card"><h5>Webinário — mecanismo de venda</h5>
+          <p>Recorrente (quinzenal ou mensal), barato, testável. Converte para perpétuo e mentoria.
+          <b>KPI:</b> taxa de comparecimento e conversão.</p>
+          <p>Papel oculto e mais importante: é a <b>academia de palco do Kauan e do Felipe</b>.
+          Apresentar a cada 15 dias para uma sala que não é sua é o treino que autoridade exige.</p></div>
+        <div class="card"><h5>Evento presencial — mecanismo de autoridade</h5>
+          <p>Uma a duas vezes por ano. Vende ingresso, mas o produto real é o palco e a oferta feita
+          nele. <b>KPI:</b> receita de <i>backend</i> por participante — nunca receita de ingresso.</p>
+          <p>É onde os três sócios deixam de ser "o Bruno e a equipe dele" e passam a ser três nomes.</p></div>
+      </div>
+      <p class="nope"><b>O que faz falhar:</b> fazer o presencial cedo demais — sem lista própria, o
+      evento vira festa cara paga com dinheiro de lançamento; e medir o presencial por bilheteria,
+      que é o jeito mais rápido de fazer um evento lucrativo e inútil.</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= 05 ESTEIRA ================= -->
+<section id="esteira"><div class="wrap">
+  <div class="shead"><div class="snum">05</div><div>
+    <h2>A esteira</h2>
+    <p class="sub">Como as quatro frentes se alimentam. Uma frente isolada é um produto; quatro
+    frentes conectadas são um negócio.</p>
+  </div></div>
+
+  <div class="lad">
+    <div class="rung"><span class="lv">Topo</span><span class="nm">Conteúdo dos três sócios</span>
+      <span class="ds">Território próprio de cada um. Entrada gratuita e permanente do funil.</span><span class="pr">R$ 0</span></div>
+    <div class="rung"><span class="lv">Base</span><span class="nm">Triple A Society</span>
+      <span class="ds">A comunidade. Onde a audiência mora, a prova social circula e o primeiro comprador de tudo aparece.</span><span class="pr">grátis ou entrada</span></div>
+    <div class="rung"><span class="lv">Conversão</span><span class="nm">Webinário quinzenal</span>
+      <span class="ds">Mecanismo de venda recorrente. Converte para perpétuo e para mentoria de entrada.</span><span class="pr">R$ 0</span></div>
+    <div class="rung"><span class="lv">Entrada</span><span class="nm">Perpétuo (VSL)</span>
+      <span class="ds">O produto que roda com tráfego frio e constrói a lista própria. O ativo.</span><span class="pr">R$ 297–997</span></div>
+    <div class="rung"><span class="lv">Meio</span><span class="nm">Mentoria de entrada</span>
+      <span class="ds">Em grupo. Transforma comprador de infoproduto em operador com resultado — a fábrica de prova social.</span><span class="pr">R$ 2–5 mil</span></div>
+    <div class="rung"><span class="lv">Palco</span><span class="nm">Evento presencial</span>
+      <span class="ds">Consagra os três nomes, converte o topo da esteira e produz conteúdo para o ano inteiro.</span><span class="pr">ingresso + backend</span></div>
+    <div class="rung"><span class="lv">Alto</span><span class="nm">Destravamento de expert</span>
+      <span class="ds">Porta A. Diagnóstico do Teto → mentoria de alto ticket com entrega definida pelo A quebrado.</span><span class="pr">R$ 25–60 mil</span></div>
+    <div class="rung"><span class="lv">Sociedade</span><span class="nm">Lançamento JV</span>
+      <span class="ds">O topo real. Não é venda — é participação. Nasce quase sempre de um destravamento bem feito.</span><span class="pr">rev share</span></div>
+  </div>
+
+  <div class="body">
+    <h3>O loop que faz a esteira compor</h3>
+    <p>Cada aluno que destrava vira <strong>case</strong>. O case alimenta o <strong>conteúdo</strong>
+    dos três e entra na <strong>VSL</strong>. A VSL com prova nova converte melhor, o que
+    <strong>baixa o CAC</strong>. CAC baixo permite comprar audiência para <strong>encher o
+    evento</strong>. O evento produz os <strong>experts</strong> que viram lançamento JV. E o
+    lançamento JV traz audiência nova para a Society.</p>
+    <div class="call warn"><span class="lab">A regra de ouro da esteira</span>
+    <p>Nenhuma frente pode depender só de tráfego pago, e nenhuma pode depender só da audiência do
+    Bruno. <strong>Cada frente precisa de no mínimo duas fontes de demanda.</strong> No dia em que o
+    CPM dobrar ou o Bruno tirar 30 dias de férias, a operação não pode parar.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 06 AUTORIDADE ================= -->
+<section id="autoridade"><div class="wrap">
+  <div class="shead"><div class="snum">06</div><div>
+    <h2>Projeto Autoridade</h2>
+    <p class="sub">O projeto mais importante do ano 1 — e o único que não gera receita direta
+    nenhuma, motivo pelo qual sempre é o primeiro a ser adiado.</p>
+  </div></div>
+  <div class="body">
+    <p>Hoje a autoridade do Hub é <strong>um rosto</strong>. Isso limita preço, limita escala e
+    concentra risco. Enquanto Kauan e Felipe forem invisíveis, três coisas continuam verdadeiras: o
+    Bruno precisa estar em toda venda relevante; o Hub não consegue cobrar por Kauan e Felipe o que
+    eles valem; e a empresa não tem valor de mercado destacado da pessoa dele.</p>
+    <div class="call"><span class="lab">Objetivo em 12 meses</span>
+    <p>Um expert do mercado deve saber <strong>para qual dos três ligar — e por qual motivo</strong>.
+    Se ao fim do ano a resposta ainda for "ligo pro Bruno", o projeto falhou, independentemente do
+    faturamento.</p></div>
+  </div>
+
+  <h3>Territórios</h3>
+  <div class="body"><p>Não podem se sobrepor. Se os três falam "marketing digital", competem pelo
+  mesmo feed e nenhum vira referência de coisa alguma. <strong>Território estreito é o que faz alguém
+  ser lembrado.</strong></p></div>
+
+  <div class="terr">
+    <div class="th"><div class="nm">Bruno Guerra</div><div class="rl">O dono da visão</div></div>
+    <div class="tb">
+      <div><b>Território</b>Mentalidade, movimento, decisão empresarial, bastidor de grandes operações. Atitude.</div>
+      <div><b>Fala com</b>Quem já ganha dinheiro e quer ganhar em outra ordem de grandeza.</div>
+      <div><b>Formatos</b>Palco, podcast, entrevista, Society. Ele não precisa ensinar tática — precisa abrir portas e dar palco.</div>
+    </div>
+  </div>
+  <div class="terr">
+    <div class="th"><div class="nm">Kauan</div><div class="rl">O arquiteto da operação</div></div>
+    <div class="tb">
+      <div><b>Território</b>Estrutura de lançamento e de perpétuo, desenho de oferta, esteira, o que fazer quando trava. Ação.</div>
+      <div><b>Fala com</b>Expert e operador avançado — quem já vende e quer sistema.</div>
+      <div><b>Formatos</b><i>Teardown</i> de funil alheio, análise de estrutura pública, aula densa. O conteúdo dele é analítico, não motivacional.</div>
+    </div>
+  </div>
+  <div class="terr">
+    <div class="th"><div class="nm">Felipe Cavalcanti</div><div class="rl">O cara que faz VSL escalar</div></div>
+    <div class="tb">
+      <div><b>Território</b>Mídia paga para venda direta, criativo, métrica, escala fria. Abundância.</div>
+      <div><b>Fala com</b>Operador e quem já tem VSL rodando e não consegue subir verba sem quebrar a conta.</div>
+      <div><b>Formatos</b>Bastidor de conta real, número na tela, teste A/B, diagnóstico ao vivo de conta de terceiro.</div>
+    </div>
+  </div>
+
+  <h3>A mecânica: de autoridade emprestada para autoridade própria</h3>
+  <div class="grid g2">
+    <div class="card"><span class="tag">Etapa 1 · mês 1–3</span><h5>Empréstimo</h5>
+      <p>Kauan e Felipe aparecem no palco do Bruno: lives na Society, aulas dentro dos produtos dele,
+      participação nos conteúdos. Custo de aquisição zero e credibilidade transferida por associação.
+      É a alavanca que ninguém mais no mercado tem — e ela só existe enquanto for usada.</p></div>
+    <div class="card"><span class="tag">Etapa 2 · mês 4–6</span><h5>Prova</h5>
+      <p>Cada um publica em canal próprio, com cadência fixa, usando o material que só eles têm: conta
+      real, estrutura real, número real. A meta não é seguidor — é <b>volume de conteúdo citável</b>.
+      Ninguém vira referência sem acervo.</p></div>
+    <div class="card"><span class="tag">Etapa 3 · mês 7–9</span><h5>Palco alheio</h5>
+      <p>Podcasts, eventos de terceiros, participação em lançamentos como especialista nomeado. É aqui
+      que a autoridade deixa de ser interna e passa a ser reconhecida por gente que não tem interesse
+      no sucesso deles.</p></div>
+    <div class="card"><span class="tag">Etapa 4 · mês 10–12</span><h5>Palco próprio</h5>
+      <p>Cada um entrega um bloco autoral no evento presencial do Hub. Quem sobe no palco do próprio
+      evento com conteúdo que é dele deixa de ser sócio-operador e vira nome.</p></div>
+  </div>
+
+  <div class="body">
+    <div class="call warn"><span class="lab">Cadência mínima inegociável</span>
+    <p><strong>3 conteúdos por semana</strong> por sócio · <strong>1 aula longa por mês</strong> ·
+    <strong>1 aparição em canal de terceiros por mês</strong> a partir do mês 7. Autoridade é volume
+    com constância, não talento. Sem essa cadência escrita e cobrada na reunião semanal, este projeto
+    não acontece — ele sempre perde para a urgência de uma frente que gera caixa hoje.</p></div>
+
+    <p><strong>Como medir:</strong> não por seguidor. Por <em>leads gerados pelo canal próprio de cada
+    sócio</em>, <em>convites recebidos de terceiros</em> e <em>menção espontânea no mercado</em>. Os
+    três são contáveis e nenhum é vaidade.</p>
+
+    <p><strong>O custo que viabiliza:</strong> um editor dedicado por sócio a partir do mês 2. Essa
+    linha de custo é o que separa este projeto de mais um plano de conteúdo que morre no mês 3. Sócio
+    que edita o próprio vídeo publica duas semanas e para.</p>
+  </div>
+</div></section>
+
+<!-- ================= 07 ONDAS ================= -->
+<section id="ondas"><div class="wrap">
+  <div class="shead"><div class="snum">07</div><div>
+    <h2>Sequência: quatro ondas de 90 dias</h2>
+    <p class="sub">As frentes não entram juntas. Cada onda tem um dono, um objetivo único, uma lista
+    do que não se faz, e um portão de passagem.</p>
+  </div></div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Onda 1 · mês 1–3</span><span class="wt">Fundação e caixa</span>
+      <span class="wo">Dono: <b>Bruno</b></span></div>
+    <div class="wb">
+      <p>Objetivo único: <strong>ter uma operação legalmente constituída, um método escrito e a
+      primeira receita própria entrando</strong> — sem gastar um real em mídia.</p>
+      <ul class="cl">
+        <li>Contrato de sócios assinado, CNPJ, contas e estrutura fiscal definida</li>
+        <li>Método Triple A documentado (3 etapas + roteiro do Diagnóstico do Teto)</li>
+        <li>Reposicionamento do site e separação das duas portas</li>
+        <li>Society ativada como canal: cadência de conteúdo e ritual semanal fixo</li>
+        <li>Turma beta da mentoria de entrada, vendida <b>só para a audiência existente</b>, com depoimentos gravados desde a primeira semana</li>
+        <li>Projeto Autoridade — Etapa 1 (empréstimo)</li>
+      </ul>
+      <p class="nope"><b>O que não se faz nesta onda:</b> tráfego frio, evento presencial, lançamento
+      de terceiro. Nenhuma exceção — cada uma delas custa 100% da atenção de um sócio.</p>
+      <div class="gate"><b>Portão para a Onda 2</b>
+      Turma beta rodando com depoimentos gravados · método documentado · contrato societário assinado.
+      Os três, não dois de três.</div>
+    </div>
+  </div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Onda 2 · mês 4–6</span><span class="wt">O ativo</span>
+      <span class="wo">Dono: <b>Felipe</b></span></div>
+    <div class="wb">
+      <p>Objetivo único: <strong>encontrar uma combinação de criativo + VSL + oferta com margem
+      positiva</strong>. Não é escalar. É achar.</p>
+      <ul class="cl">
+        <li>Produto perpétuo definido, produzido e hospedado</li>
+        <li>VSL escrita, gravada e testada em no mínimo <b>3 ângulos distintos</b> — não 3 versões do mesmo ângulo</li>
+        <li>Cauda de oferta completa: <i>order bump</i>, upsell e o caminho para a mentoria</li>
+        <li>Infraestrutura de mídia, rastreamento server-side, checkout e atribuição</li>
+        <li>Projeto Autoridade — Etapa 2 (prova, canal próprio)</li>
+      </ul>
+      <p class="nope"><b>O que não se faz:</b> escalar antes de achar a combinação; aceitar
+      lançamento novo; trocar de VSL sem volume estatístico.</p>
+      <div class="gate"><b>Portão para a Onda 3</b>
+      CAC e margem conhecidos e estáveis por 30 dias corridos · LTV/CAC de 90 dias acima de 2 ·
+      operação de mídia rodando com gestor contratado, não com o sócio no gerenciador.</div>
+    </div>
+  </div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Onda 3 · mês 7–9</span><span class="wt">Escala com terceiros</span>
+      <span class="wo">Dono: <b>Kauan</b></span></div>
+    <div class="wb">
+      <p>Objetivo único: <strong>provar o método em operação alheia e construir a lista que vai
+      encher o evento</strong>.</p>
+      <ul class="cl">
+        <li>Um lançamento JV (máximo dois) com expert aprovado nos três filtros da Frente 03</li>
+        <li>Escala do perpétuo em paralelo — rodando com o time, não com o sócio</li>
+        <li>Webinário quinzenal no ar, com Kauan e Felipe apresentando alternadamente</li>
+        <li>Primeiras vendas de destravamento de expert, originadas pelo Diagnóstico do Teto</li>
+        <li>Projeto Autoridade — Etapa 3 (palco alheio)</li>
+      </ul>
+      <p class="nope"><b>O que não se faz:</b> aceitar JV que não tem caminho para perpetuar depois,
+      por maior que seja o cheque.</p>
+      <div class="gate"><b>Portão para a Onda 4</b>
+      Lançamento entregue com margem positiva · lista própria em volume suficiente para lotar a sala
+      sem comprar mídia de última hora · pelo menos um convite externo recebido por Kauan ou Felipe.</div>
+    </div>
+  </div>
+
+  <div class="wave">
+    <div class="wh"><span class="wn">Onda 4 · mês 10–12</span><span class="wt">O palco</span>
+      <span class="wo">Dono: <b>Bruno</b></span></div>
+    <div class="wb">
+      <p>Objetivo único: <strong>consagrar os três nomes e abrir o produto de maior ticket do
+      Hub</strong>.</p>
+      <ul class="cl">
+        <li>Evento presencial — ingressos vendidos para lista própria + convidados dos experts parceiros</li>
+        <li>Oferta de destravamento de alto ticket lançada do palco</li>
+        <li>Os três sócios entregando blocos autorais distintos (Projeto Autoridade — Etapa 4)</li>
+        <li>Conteúdo do evento capturado para alimentar o ano 2 inteiro</li>
+        <li>Planejamento do ano 2 fechado dentro do mesmo trimestre</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="call"><span class="lab">Por que esta ordem e não outra</span>
+    <p><strong>Caixa antes de ativo:</strong> o perpétuo consome dinheiro por 90 dias antes de
+    devolver. Sem a mentoria beta pagando as contas, a Onda 2 vira dívida.</p>
+    <p><strong>Ativo antes de terceiro:</strong> se o Hub começa fazendo lançamento de expert, ele
+    nunca constrói o próprio — porque lançamento de terceiro consome exatamente as mesmas pessoas e
+    paga mais rápido. É o caminho pelo qual toda agência que queria virar produto continua agência.</p>
+    <p><strong>Terceiro antes de palco:</strong> sem lista própria e sem parceiros, o evento é uma
+    sala vazia paga com dinheiro emprestado do lançamento anterior.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 08 SOCIETÁRIO ================= -->
+<section id="societario"><div class="wrap">
+  <div class="shead"><div class="snum">08</div><div>
+    <h2>Societário e propriedade de ativos</h2>
+    <p class="sub">A seção que salva a empresa. Nenhum hub de três sócios morre por falta de
+    faturamento — morre aqui.</p>
+  </div></div>
+
+  <h4>Equity e vesting</h4>
+  <div class="body">
+    <p>O critério de divisão não deve ser "quem traz mais audiência hoje" — isso premia o passado e
+    subvaloriza os cinco anos seguintes. O critério é <strong>quem sustenta a operação daqui para
+    frente</strong>. Independentemente do percentual acordado, a recomendação é
+    <strong>vesting de 4 anos com cliff de 1</strong>, inclusive entre fundadores.</p>
+    <p>Motivo direto: se um dos três sair no mês 8, o cenário sem vesting é uma empresa em construção
+    com um sócio ausente detendo um terço dela para sempre. Vesting não é desconfiança — é a única
+    proteção que os três têm uns dos outros.</p>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Item</th><th>Decisão a tomar</th><th>Recomendação</th></tr></thead>
+    <tbody>
+      <tr><td>Divisão de cotas</td><td>Percentual de cada sócio</td><td>Definido em reunião. Formalizado com vesting 4/1.</td></tr>
+      <tr><td>P&amp;L por sócio</td><td>Quem responde por qual número</td><td>Cada frente tem um dono com meta. "Área" sem número é diluição de responsabilidade.</td></tr>
+      <tr><td>Pró-labore</td><td>Valor fixo desde quando</td><td>Fixo e modesto desde a Onda 1. Sócio sem renda decide errado.</td></tr>
+      <tr><td>Distribuição</td><td>Sobre o quê e com que frequência</td><td>Só sobre lucro apurado, trimestral, e apenas depois da regra de reinvestimento.</td></tr>
+      <tr><td>Reinvestimento</td><td>Quanto do lucro volta para a operação</td><td>Percentual fixo definido antes da primeira distribuição — não negociado no trimestre em que houver lucro.</td></tr>
+      <tr><td>Regra de decisão</td><td>O que exige unanimidade</td><td>Entrada de sócio, venda, dívida, mudança de marca. O resto é decisão do dono da frente.</td></tr>
+      <tr><td>Desempate</td><td>Quem decide quando os três discordam</td><td>Um CEO nomeado. Sociedade de três sem desempate trava em toda decisão difícil.</td></tr>
+      <tr><td>Não-concorrência</td><td>Operação fora do Hub é permitida?</td><td>Sim para o que já existe e for declarado hoje. Não para novas no mesmo escopo.</td></tr>
+      <tr><td>Saída</td><td>O que acontece com marca e Society</td><td>Cláusula escrita antes da primeira venda, com fórmula de <i>buyout</i> definida.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="body">
+    <div class="call warn"><span class="lab">O item mais negligenciado do mercado</span>
+    <p><strong>A lista, a marca, o método, os criativos, as contas de anúncio e os perfis pertencem à
+    PJ — nunca a pessoa física.</strong> Escrito, assinado, com os acessos administrativos na conta da
+    empresa.</p>
+    <p>E a extensão disso para os JVs: <strong>a lista gerada com dinheiro de mídia do Hub é do
+    Hub.</strong> Cláusula inegociável em todo contrato de lançamento. É o único jeito de a Frente 03
+    parar de ser serviço e virar construção de patrimônio.</p></div>
+
+    <h4>Contrato-padrão de JV com expert</h4>
+    <ul class="cl">
+      <li><strong>Split de receita</strong> e se há fee mínimo de operação</li>
+      <li><strong>Quem banca a mídia</strong> — e o que acontece se o lançamento não paga a verba investida</li>
+      <li><strong>Propriedade da lista e dos criativos</strong> gerados durante a campanha</li>
+      <li><strong>Obrigações do expert</strong>: datas de gravação, presença nas lives, prazo de resposta. A causa mais comum de lançamento ruim não é estratégia — é expert que some.</li>
+      <li><strong>Cláusula de saída</strong> com fee garantido se o expert mudar a oferta ou abandonar no meio</li>
+      <li><strong>Exclusividade e janela</strong>: o expert pode lançar com outra estrutura em qual prazo</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ================= 09 TIME ================= -->
+<section id="time"><div class="wrap">
+  <div class="shead"><div class="snum">09</div><div>
+    <h2>Time, por onda</h2>
+    <p class="sub">Contratar cedo demais queima caixa. Contratar tarde demais transforma sócio em
+    operacional — que é mais caro.</p>
+  </div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Onda</th><th>Contratações</th><th>Por quê agora</th></tr></thead>
+    <tbody>
+      <tr><td><b>Onda 1</b></td><td>1 editor de vídeo · 1 social/community (meio período, Society) · 1 suporte/CS ao abrir a turma beta</td>
+        <td>O editor é o que viabiliza o Projeto Autoridade. Sem ele, o plano de conteúdo morre no mês 3 — sempre morre.</td></tr>
+      <tr><td><b>Onda 2</b></td><td>1 copywriter (pode ser freela por projeto) · 1 gestor de tráfego júnior sob o Felipe · 1 designer/criativo</td>
+        <td>Perpétuo é máquina de criativo. Se o volume de criativo depender do sócio, a conta trava no mês 2 de escala.</td></tr>
+      <tr><td><b>Onda 3</b></td><td>1–2 closers de alto ticket · 1 editor adicional · <b>1 coordenador de operação (PM)</b></td>
+        <td>O PM é o cargo que libera os três sócios. É o mais caro de justificar e o que mais devolve.</td></tr>
+      <tr><td><b>Onda 4</b></td><td>Produção de evento (terceirizada) · CS sênior</td>
+        <td>Evento é competência específica e episódica. Não vale internalizar no ano 1.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="body">
+    <div class="call warn"><span class="lab">Regra de corte</span>
+    <p>A partir do mês 3, <strong>nenhum sócio edita vídeo, posta conteúdo ou responde suporte</strong>.
+    Se um deles ainda está fazendo isso, a frente dele não vai escalar — e o sinal aparece antes na
+    agenda do que no P&amp;L.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 10 CAIXA ================= -->
+<section id="caixa"><div class="wrap">
+  <div class="shead"><div class="snum">10</div><div>
+    <h2>Economia e caixa</h2>
+    <p class="sub">Cada frente tem um comportamento de caixa diferente. Tratar as quatro com o mesmo
+    orçamento é o erro que quebra operações lucrativas.</p>
+  </div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Frente</th><th>Comportamento de caixa</th><th>Consequência prática</th></tr></thead>
+    <tbody>
+      <tr><td>Mentoria</td><td>Positivo e imediato</td><td>É o que financia a Onda 2. Não deve ser distribuído.</td></tr>
+      <tr><td>Perpétuo</td><td>Negativo 60–90 dias, previsível depois</td><td>Precisa de teto de verba definido no início do trimestre, não ajustado por empolgação semanal.</td></tr>
+      <tr><td>Lançamento JV</td><td>Concentrado no fim, volátil</td><td>Nunca pode financiar despesa recorrente. Receita de lançamento é receita não-recorrente.</td></tr>
+      <tr><td>Evento presencial</td><td>Negativo até ~30 dias antes</td><td>Exige reserva dedicada, separada do caixa operacional.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="body">
+    <div class="call"><span class="lab">A conta que decide a Frente 02</span>
+    <p><strong>LTV de 90 dias ÷ CAC.</strong> Onde LTV = produto + <i>order bump</i> + upsell +
+    conversão para mentoria, medido em 90 dias.</p>
+    <p>Abaixo de <strong>2</strong>: não escala — revisar oferta, não criativo.<br>
+    Entre <strong>2 e 3</strong>: escala devagar, com teto semanal de aumento de verba.<br>
+    Acima de <strong>3</strong>: escala agressiva, e o gargalo passa a ser produção de criativo.</p></div>
+
+    <h4>Regras de caixa</h4>
+    <ul class="cl">
+      <li><strong>O perpétuo nunca é financiado por receita que ainda não entrou.</strong> Orçamento de mídia sai de teto fixo mensal definido no início do trimestre.</li>
+      <li><strong>Reserva mínima:</strong> N meses de custo fixo em caixa antes de qualquer aumento de investimento em mídia. Sugestão: N = 3.</li>
+      <li><strong>Receita de lançamento não vira custo fixo.</strong> Contratação recorrente só se sustenta em receita recorrente.</li>
+    </ul>
+
+    <h4>Os quatro números que os três olham toda semana</h4>
+    <div class="stats">
+      <div class="stat"><div class="n">01</div><div class="l">Caixa disponível e meses de operação cobertos</div></div>
+      <div class="stat"><div class="n">02</div><div class="l">Margem de contribuição do perpétuo nos últimos 7 dias</div></div>
+      <div class="stat"><div class="n">03</div><div class="l">Leads próprios gerados por canal (mídia, orgânico de cada sócio, Society)</div></div>
+      <div class="stat"><div class="n">04</div><div class="l">Alunos ativos e taxa de progresso no marco prometido</div></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ================= 11 GOVERNANÇA ================= -->
+<section id="governanca"><div class="wrap">
+  <div class="shead"><div class="snum">11</div><div>
+    <h2>Governança e cadência</h2>
+    <p class="sub">Quatro rituais. Se algum deles vira reunião de status, foi perdido.</p>
+  </div></div>
+
+  <div class="grid g2">
+    <div class="card"><span class="tag">Semanal · 60 min · os três</span><h5>Números e bloqueios</h5>
+      <p>Os quatro números da seção 10, um bloqueio por frente, e as decisões pendentes. Quem trouxer
+      relatório de atividade em vez de número perdeu a reunião.</p></div>
+    <div class="card"><span class="tag">Quinzenal · 45 min</span><h5>Revisão da onda</h5>
+      <p>A onda corrente está no caminho do portão? Se não, o que muda esta quinzena? Aqui também se
+      cobra a cadência do Projeto Autoridade — nominalmente, por sócio.</p></div>
+    <div class="card"><span class="tag">Mensal</span><h5>P&amp;L, mídia e time</h5>
+      <p>Resultado real, custo de mídia por frente, desempenho e necessidade de time. É a reunião que
+      autoriza contratação.</p></div>
+    <div class="card acc"><span class="tag">Trimestral</span><h5>Fecha uma onda, abre a seguinte</h5>
+      <p>Só se avança se o portão foi cumprido. <b>Se não foi, estende-se a onda — não se acumulam
+      duas frentes.</b> Esta é a única regra que protege o plano inteiro; todas as outras podem ser
+      flexibilizadas, esta não.</p></div>
+  </div>
+</div></section>
+
+<!-- ================= 12 SITE ================= -->
+<section id="site"><div class="wrap">
+  <div class="shead"><div class="snum">12</div><div>
+    <h2>O que muda na comunicação</h2>
+    <p class="sub">O site atual vende serviço de agência para empresa que fatura R$ 50k/mês. O novo
+    modelo vende produto, método e sociedade.</p>
+  </div></div>
+
+  <div class="grid g2">
+    <div class="card"><h5>O que morre</h5>
+      <p>Linguagem de fornecedor: "gestão de tráfego", "desenvolvimento de SaaS", "copywriting
+      estratégico" como itens de menu. Isso descreve entregas de agência.</p>
+      <p>O filtro "empresas a partir de R$ 50k/mês" como headline. Continua sendo critério — mas
+      vira critério interno de qualificação, não promessa de vitrine.</p>
+      <p>A dupla home "empresas / influenciadores". Vira Porta A e Porta B, com páginas separadas e
+      argumentos distintos.</p></div>
+    <div class="card"><h5>O que fica e ganha peso</h5>
+      <p><b>Atitude · Ação · Abundância</b> deixa de ser bio do Bruno e vira a espinha do site
+      inteiro — com página própria.</p>
+      <p><b>O histórico de 8 dígitos</b>, contado com número e contexto, não como adjetivo.</p>
+      <p><b>A seletividade</b> ("atendemos um número limitado de projetos"), que hoje já está no FAQ
+      e deveria estar acima da dobra.</p>
+      <p><b>Os três nomes com páginas próprias e prova</b> — não bio de rodapé. Isso é parte do
+      Projeto Autoridade, não decoração.</p></div>
+  </div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Página</th><th>Para quem</th><th>O que faz</th></tr></thead>
+    <tbody>
+      <tr><td><b>/</b> Home</td><td>Mercado</td><td>O que é a casa, o método, os três nomes, e o desvio para as duas portas. Não vende nada diretamente.</td></tr>
+      <tr><td><b>/metodo</b></td><td>Todos</td><td>O Método Triple A público. É a peça que faz o Hub ser citado por quem nunca comprou.</td></tr>
+      <tr><td><b>/experts</b></td><td>Porta A</td><td>Prova de lançamentos e destravamentos. CTA = aplicação para o Diagnóstico do Teto, não formulário de contato.</td></tr>
+      <tr><td><b>/mentoria</b></td><td>Porta B</td><td>Entrada e destravamento, com o marco prometido explícito e os pré-requisitos declarados.</td></tr>
+      <tr><td><b>/society</b></td><td>Audiência</td><td>A comunidade. Porta de entrada gratuita ou de baixo ticket para toda a esteira.</td></tr>
+      <tr><td><b>/eventos</b></td><td>Todos</td><td>Webinário recorrente (captura) e presencial (autoridade e alto ticket).</td></tr>
+      <tr><td><b>/bruno · /kauan · /felipe</b></td><td>Mercado</td><td>Território, prova e conteúdo de cada sócio. A infraestrutura do Projeto Autoridade.</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="body">
+    <h4>Territórios de headline para teste</h4>
+    <ul class="cl">
+      <li>"Estrutura para quem já provou que sabe vender."</li>
+      <li>"A casa que constrói e escala produtos digitais."</li>
+      <li>"Atitude. Ação. Abundância. Nessa ordem."</li>
+    </ul>
+    <p>A terceira é a mais defensável: usa o ativo narrativo que já existe, sugere método e implica
+    diagnóstico — três coisas em cinco palavras. A escolha final sai do teste, não da reunião.</p>
+  </div>
+</div></section>
+
+<!-- ================= 13 RISCOS ================= -->
+<section id="riscos"><div class="wrap">
+  <div class="shead"><div class="snum">13</div><div>
+    <h2>Riscos e critérios de parada</h2>
+    <p class="sub">Cada risco com o sinal que o antecipa e a ação definida antes de ele acontecer —
+    porque no meio da crise ninguém decide bem.</p>
+  </div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Risco</th><th>Sinal de alerta</th><th>Ação definida</th></tr></thead>
+    <tbody>
+      <tr><td>Bruno vira gargalo comercial</td><td>Mais de 70% das vendas passando por ele no mês 6</td>
+        <td>Mover originação para o webinário e para o conteúdo dos outros dois. Bruno sai da linha de frente de vendas de ticket médio.</td></tr>
+      <tr><td>Perpétuo não fecha a conta</td><td>LTV/CAC abaixo de 2 após 90 dias e 3 ângulos de VSL testados</td>
+        <td>Pausar a mídia. Revisar <b>oferta e público</b> — não criativo. Criativo raramente é a causa quando a conta não fecha por margem larga.</td></tr>
+      <tr><td>JV ruim</td><td>Expert atrasa gravação, muda a oferta no meio, some das lives</td>
+        <td>Acionar a cláusula de saída com fee mínimo. Não "salvar" o lançamento com esforço extra do time.</td></tr>
+      <tr><td>Frentes se atropelando</td><td>Duas ondas abertas ao mesmo tempo</td>
+        <td>Fechar a mais nova, sem exceção. Estender prazo é barato; operar duas frentes mal é caro.</td></tr>
+      <tr><td>Sociedade travada</td><td>Decisão pendente há mais de duas semanas</td>
+        <td>Regra de desempate acionada — por isso ela precisa estar escrita no contrato antes de ser necessária.</td></tr>
+      <tr><td>Autoridade não move</td><td>Mês 9 sem nenhum convite externo para Kauan ou Felipe</td>
+        <td>Trocar formato e canal, manter o território. Território estreito leva tempo; abandoná-lo zera o acúmulo.</td></tr>
+      <tr><td>Evento no vermelho</td><td>60 dias antes com menos de 50% da meta de ingressos</td>
+        <td>Reduzir a sala, não o preço. Sala cheia menor vale mais que sala grande vazia — o produto é o palco.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<!-- ================= 14 DECISÕES ================= -->
+<section id="decisoes"><div class="wrap">
+  <div class="shead"><div class="snum">14</div><div>
+    <h2>Decisões pendentes</h2>
+    <p class="sub">Dez respostas. Enquanto elas não existirem, a Onda 1 não começa — e nenhuma
+    projeção de receita é honesta.</p>
+  </div></div>
+
+  <div class="body">
+    <ol class="nl">
+      <li><strong>Divisão de equity e regra de vesting.</strong> Percentual de cada um e o que acontece se alguém sair no mês 8.</li>
+      <li><strong>Qual é o produto perpétuo.</strong> Tema e promessa: é sobre entrar no mercado, sobre tráfego para VSL, ou sobre estrutura de operação? A resposta define a VSL, o público e o upsell.</li>
+      <li><strong>O que é a Society hoje.</strong> Gratuita, paga, ou paga de entrada? É topo de funil ou é produto? Quantas pessoas ativas, e a base é acessível por e-mail e WhatsApp?</li>
+      <li><strong>Ticket e formato da mentoria de entrada.</strong> Duração, tamanho de turma, quantidade de encontros ao vivo e qual é o marco prometido ao aluno.</li>
+      <li><strong>Faixa de <i>rev share</i> padrão para JV</strong> e se haverá fee mínimo de operação.</li>
+      <li><strong>Orçamento de mídia disponível para a Onda 2</strong> e reserva de caixa atual da operação.</li>
+      <li><strong>Operações fora do Hub.</strong> Cada sócio declara hoje o que mantém, e fica definido o que pode ser criado daqui em diante.</li>
+      <li><strong>Quem é o CEO de fato</strong> — quem decide quando os três discordam.</li>
+      <li><strong>Data-alvo do evento presencial.</strong> Ela define para trás o cronograma inteiro da Onda 3.</li>
+      <li><strong>Ativos atuais do Kauan</strong> — nome completo, audiência, base e cases publicáveis. Necessários para desenhar o território dele com precisão em vez de por dedução.</li>
+    </ol>
+
+    <div class="call warn"><span class="lab">Premissas assumidas neste documento</span>
+    <p>Na ausência dos dados acima, assumi: que a Society tem base própria acessível e utilizável para
+    a venda beta da Onda 1; que os três sócios têm disponibilidade integral para o Hub; que existe
+    caixa para sustentar 90 dias de operação sem receita nova; e que a marca Triple A e o domínio
+    estão sob controle da sociedade e não de pessoa física. <strong>Qualquer uma dessas premissas
+    sendo falsa muda a Onda 1</strong> — e é por isso que ela é a primeira conversa, não a última.</p></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span><b>Triple A Hub</b> — escopo de construção · v1</span>
+  <span>24 de agosto de 2026</span>
+  <span>Preparado por <b>Felipe Cavalcanti</b></span>
+  <span>Documento interno de trabalho — não distribuir</span>
+</div></footer>
+
+</body>
+</html>
